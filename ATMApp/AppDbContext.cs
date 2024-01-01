@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ATMApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ATMApp
 {
@@ -8,6 +9,6 @@ namespace ATMApp
         {
         }
 
-        
+        DbSet<AtmDataModel> DataModel { get; set; }
     }
 }
