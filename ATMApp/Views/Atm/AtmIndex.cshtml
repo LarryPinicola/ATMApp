@@ -1,0 +1,48 @@
+﻿@model List<AtmDataModel>
+@{
+    ViewData["Title"] = "Atm Index";
+    int count = 0;
+    string message = null;
+    bool isSuccess = false;
+    if (TempData["Message"] is not null)
+    {
+        message = TempData["Message"].ToString();
+        isSuccess = Convert.ToBoolean(TempData["IsSuccess"]);
+    }
+}
+
+<h3>ATM Users</h3>
+@if (message != null)
+{
+    <div class="alert alert-@(isSuccess ? "success":"danger")" role="alert">
+        @message
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">CardId</th>
+            <th scope="col">CardNum</th>
+            <th scope="col">CardPin</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@(++count)</th>
+                <th>@item.CardId</th>
+                <th>@item.CardNum</th>
+                <th>@item.CardPin</th>
+                <th>@item.FirstName</th>
+                <th>@item.LastName</th>
+                <th>@item.Balance</th>
+            </tr>
+        }
+    </tbody>
+</table>

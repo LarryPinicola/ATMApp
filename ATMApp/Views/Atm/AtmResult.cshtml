@@ -1,0 +1,15 @@
+﻿@model AtmDataModel
+
+<h3>Final Balance</h3>
+
+@if (Model != null)
+{
+    <p>Card Number: @Model.CardNum</p>
+    <p>Balance: @Model.Balance MMK</p>
+}
+else
+{
+    <p>Card not found or Incorrect CardNumber or CardPin</p>
+}
+
+<p><a href="/home" class="text-decoration-none">Balance Checker</a></p>

@@ -1,0 +1,22 @@
+﻿@model List<AtmDataModel>
+
+
+<h3>Fill how much money would you like to deposit</h4>
+	f
+	<form action="/atm/deposit" method="post">
+
+		<div class="mb-3">
+			<label class="form-label">CardNumber</label>
+			<input type="text" name="CardNum" class="form-control">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">PinNumber</label>
+			<input type="text" name="CardPin" class="form-control">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Balance</label>
+			<input type="text" name="Balance" class="form-control">
+		</div>
+		<a href="/home" type="button" class="btn btn-secondary">Cancel</a>
+		<button type="submit" class="btn btn-success">Deposit</button>
+	</form>
