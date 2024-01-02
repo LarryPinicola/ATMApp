@@ -9,7 +9,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     string? connectionString = builder.Configuration.GetConnectionString("DbConnection");
     options.UseSqlServer(connectionString);
-});
+}, ServiceLifetime.Transient, ServiceLifetime.Transient);
 
 var app = builder.Build();
 

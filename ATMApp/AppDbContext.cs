@@ -9,6 +9,6 @@ namespace ATMApp
         {
         }
 
-        DbSet<AtmDataModel> DataModel { get; set; }
+        public DbSet<AtmDataModel> AtmData { get; set; }
     }
 }
